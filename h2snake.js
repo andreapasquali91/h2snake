@@ -343,9 +343,9 @@ function menu(){
     document.addEventListener('keydown', spaceHandler);
     let gitBtn = document.getElementById('git');
     gitBtn.style.display = 'inline';
-    gitBtn.onclick = function(){
-        window.open("https://github.com/andreapasquali91/h2snake", "_blank");
-    }
+    gitBtn.onclick = () => {
+        window.open('https://javascript.info');
+      };
 }
 //second page, runs after page 1 and every time we try again
 function chooseDifficulty(){
