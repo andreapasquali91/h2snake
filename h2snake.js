@@ -340,7 +340,7 @@ function menu(){
     theMenu.style.fontSize = '48px';
     theMenu.style.color = 'white';
     theMenu.innerHTML = text;
-    document.addEventListener('keydown', spaceHandler);
+    document.addEventListener('keydown', eventHandler);
 }
 //second page, runs after page 1 and every time we try again
 function chooseDifficulty(){
@@ -374,7 +374,7 @@ function finalScreen(){
     page = 4;
     myCanvas.clear();
     let plur = (apple.value===1)?'':'s';
-    let text = `You managed to get ${apple.value} point${plur} in ${difficulty} mode.`;
+    let text = `You managed to get ${apple.value} point${plur} in ${difficulty} mode.<br>Press spacebar to`;
     let btn3 = document.getElementById('3');
     document.getElementById('menu').innerHTML = text;
     btn3.style.display = 'inline';
@@ -384,24 +384,38 @@ function finalScreen(){
     btn3.onclick = function(){
         page = 2;
         btn3.style.display = 'none';
-        document.getElementById('menu').innerHTML = "Choose your difficulty!";
-        document.addEventListener('keydown', spaceHandler);
+        document.getElementById('menu').innerHTML = "Choose your difficulty<br>(and practice using arrow buttons).";
         chooseDifficulty();
     }
     
 }
-//common handler for spacebar in pages 1 and 3
-function spaceHandler(key){
+//common handler for keyboard events in menu
+function eventHandler(key){
     //if in page 1, go to page 2: choose difficulty
-    if (key.which === SPACE && page===1){
-        let text = "Choose your difficulty!"
+    if (key.which === SPACE && page===1 && !inGame){
+        let text = "Choose your difficulty<br>(and practice using arrow buttons)."
         document.getElementById('menu').innerHTML = text;
         chooseDifficulty();
     }
+    //if in page 2, select difficulty
+    if (key.which=== LEFT && page ===2 && !inGame){
+        difficulty = 'easy';
+        commandMenu();
+    }
+    if (key.which=== RIGHT && page ===2 && !inGame){
+        difficulty = 'hard';
+        commandMenu();
+    }
     //if in page 3, start game
-    if (key.which ===SPACE && page === 3){
-        document.removeEventListener('keydown',spaceHandler);
+    if (key.which ===SPACE && page === 3 && !inGame){
         startGame();
+    }
+    //if in page 4, choose difficulty
+    if (key.which === SPACE && page === 4 && !inGame){
+        page = 2;
+        document.getElementById('3').style.display  = 'none';
+        document.getElementById('menu').innerHTML = "Choose your difficulty<br>(and practice using arrow buttons).";
+        chooseDifficulty();
     }
 }
 
