@@ -341,11 +341,6 @@ function menu(){
     theMenu.style.color = 'white';
     theMenu.innerHTML = text;
     document.addEventListener('keydown', spaceHandler);
-    let gitBtn = document.getElementById('git');
-    gitBtn.style.display = 'inline';
-    gitBtn.onclick = () => {
-        window.open('https://javascript.info');
-      };
 }
 //second page, runs after page 1 and every time we try again
 function chooseDifficulty(){
