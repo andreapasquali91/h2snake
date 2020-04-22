@@ -378,6 +378,9 @@ function finalScreen(){
     let btn3 = document.getElementById('3');
     document.getElementById('menu').innerHTML = text;
     btn3.style.display = 'inline';
+    document.getElementById('git').style.display = 'inline';
+    document.getElementById('git').style.left='160px';
+    document.getElementById('git').style.top='700px';
     btn3.onclick = function(){
         page = 2;
         btn3.style.display = 'none';
@@ -385,6 +388,7 @@ function finalScreen(){
         document.addEventListener('keydown', spaceHandler);
         chooseDifficulty();
     }
+    
 }
 //common handler for spacebar in pages 1 and 3
 function spaceHandler(key){
