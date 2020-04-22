@@ -350,7 +350,7 @@ function menu(){
 //second page, runs after page 1 and every time we try again
 function chooseDifficulty(){
     page =2;
-    document.getElementById("git").display = 'none';
+    document.getElementById('git').style.display = 'none';
     let btn1 = document.getElementById('1');
     btn1.style.display = 'inline';
     btn1.onclick = function(){
