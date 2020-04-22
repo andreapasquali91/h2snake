@@ -344,7 +344,7 @@ function menu(){
     let gitBtn = document.getElementById('git');
     gitBtn.style.display = 'inline';
     gitBtn.onclick = function(){
-        window.open("https://github.com/andreapasquali91/h2snake", "_blank");
+        window.open(https://github.com/andreapasquali91/h2snake, "_blank");
     }
 }
 //second page, runs after page 1 and every time we try again
