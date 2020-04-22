@@ -341,10 +341,13 @@ function menu(){
     theMenu.style.color = 'white';
     theMenu.innerHTML = text;
     document.addEventListener('keydown', spaceHandler);
+    let gitBtn = document.getElementById('git');
+    gitBtn.onclick = window.open("https://github.com/andreapasquali91/h2snake", "_blank");
 }
 //second page, runs after page 1 and every time we try again
 function chooseDifficulty(){
     page =2;
+    document.getElementById("git").display = 'none';
     let btn1 = document.getElementById('1');
     btn1.style.display = 'inline';
     btn1.onclick = function(){
