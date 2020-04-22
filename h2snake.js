@@ -366,7 +366,7 @@ function commandMenu(){
     btn1.style.display = 'none';
     let btn2 = document.getElementById('2');
     btn2.style.display = 'none';
-    let text = `Use left and right arrow to turn.<br><br>Press spacebar to start in ${difficulty} mode.`
+    let text = `You chose ${difficulty} mode.<br><br> Use left and right arrow to turn.<br><br>Press spacebar to start.`
     document.getElementById('menu').innerHTML = text;
 }
 //fourth page, runs every time we lose the game
